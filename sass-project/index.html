@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SASS Nesting Practice</title>
+    <link rel="stylesheet" href="style.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <h1 class="logo">My Portfolio</h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>`a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="cards">
+        <article class="card">
+          <h2 class="card-title">Project One</h2>
+          <p class="card-text">A short description of the project goes here.</p>
+          <button class="btn">Read More</button>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Project Two</h2>
+          <p class="card-text">
+            Another short description of the project goes here.
+          </p>
+          <button class="btn">Read More</button>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p>&copy; 2025 My Portfolio</p>
+      </div>
+    </footer>
+  </body>
+</html>
