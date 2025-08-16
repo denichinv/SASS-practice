@@ -1,10 +1,4 @@
-$button-color: #3498db;
-$button-hoover: #2980b9;
-$theme-color: #333;
-$background-color: #f4f4f4;
-$font-color: #fff;
-$border-radius: 8px;
-$font-stack: Arial, sans-serif;
+@use "variables" as var;
 
 /* Reset */
 * {
@@ -15,16 +9,16 @@ $font-stack: Arial, sans-serif;
 
 /* Body */
 body {
-  font-family: $font-stack;
-  background-color: $background-color;
-  color: $theme-color;
+  font-family: var.$font-stack;
+  background-color: var.$background-color;
+  color: var.$theme-color;
   line-height: 1.6;
 }
 
 /* Header */
 .header {
-  background: $theme-color;
-  color: $font-color;
+  background: var.$theme-color;
+  color: var.$font-color;
 
   &-container {
     max-width: 1100px;
@@ -67,8 +61,8 @@ nav {
   }
 
   .card {
-    background: $background-color;
-    border-radius: $border-radius;
+    background: var.$background-color;
+    border-radius: var.$border-radius;
     padding: 1rem;
     width: 250px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -84,21 +78,21 @@ nav {
 }
 
 .btn {
-  background: $button-color;
-  color: $background-color;
+  background: var.$button-color;
+  color: var.$background-color;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: $border-radius;
+  border-radius: var.$border-radius;
   cursor: pointer;
   &:hover {
-    background: $button-hoover;
+    background: var.$button-hoover;
   }
 }
 
 /* Footer */
 .footer {
   background: #333;
-  color: $font-color;
+  color: var.$font-color;
   text-align: center;
 
   &-container {
