@@ -1,13 +1,23 @@
 @use "variables" as var;
+@use "sass:color";
 
-/* Reset */
+// ------------------ Mixins ------------------
+@mixin nav-a-hover($hover-color, $decoration: underline) {
+  &:hover {
+    color: $hover-color;
+    text-decoration: $decoration;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+}
+
+// ------------------ Reset ------------------
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
+// ------------------ Base ------------------
 body {
   font-family: var.$font-stack;
   background-color: var.$background-color;
@@ -15,7 +25,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+// ------------------ Header ------------------
 .header {
   background: var.$theme-color;
   color: var.$font-color;
@@ -28,36 +38,44 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+
   .logo {
     font-size: 1.5rem;
   }
 }
 
+// ------------------ Nav ------------------
 nav {
-  & ul {
+  ul {
     list-style: none;
     display: flex;
     gap: 1rem;
   }
-  & a {
+
+  a {
     color: #fff;
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
+  }
+
+  // Apply a different hover color to each link in order
+  @for $i from 1 through length(var.$hover-colors) {
+    li:nth-child(#{$i}) a {
+      @include nav-a-hover(nth(var.$hover-colors, $i));
     }
   }
 }
 
-/* Main */
+// ------------------ Main ------------------
 .main {
   max-width: 1100px;
   margin: auto;
   padding: 2rem;
-  height: 84vh;
+  min-height: 84vh;
 
   .cards {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
   }
 
   .card {
@@ -70,13 +88,13 @@ nav {
     &-title {
       margin-bottom: 0.5rem;
     }
-
     &-text {
       margin-bottom: 1rem;
     }
   }
 }
 
+// ------------------ Buttons ------------------
 .btn {
   background: var.$button-color;
   color: var.$background-color;
@@ -84,12 +102,13 @@ nav {
   border: none;
   border-radius: var.$border-radius;
   cursor: pointer;
+
   &:hover {
-    background: var.$button-hoover;
+    background: color.scale(var.$button-color, $lightness: -20%);
   }
 }
 
-/* Footer */
+// ------------------ Footer ------------------
 .footer {
   background: #333;
   color: var.$font-color;

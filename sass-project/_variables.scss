@@ -1,7 +1,12 @@
-$button-color: #3498db;
-$button-hoover: #2980b9;
-$theme-color: #333;
-$background-color: #f4f4f4;
-$font-color: #fff;
-$border-radius: 8px;
-$font-stack: Arial, sans-serif;
+// Colors
+$theme-color: #333 !default;
+$background-color: #f4f4f4 !default;
+$font-color: #fff !default;
+$button-color: #3498db !default;
+
+// Typography & layout
+$font-stack: Arial, sans-serif !default;
+$border-radius: 8px !default;
+
+// Nav hover colors (one per link in order)
+$hover-colors: #ff6363, #60a5fa, #34d399, #f59e0b, #a78bfa !default;
